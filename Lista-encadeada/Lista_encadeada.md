@@ -6,11 +6,11 @@ Imagine uma "caça ao tesouro".
 
 1. Você começa com uma única pista (o "início" ou "**cabeça**" da lista).
 
-2. Essa pista lhe diz o valor de algo (dado) e, o mais importante, **onde encontrar a próxima pista** (ponteiro).
+2. Essa pista lhe diz o valor de algo (`dado`) e, o mais importante, **onde encontrar a próxima pista** (`ponteiro`).
 
-3. Você segue para a próxima pista, que tem seu próprio dado e um ponteiro para a próxima.
+3. Você segue para a próxima pista, que tem seu próprio `dado` e um `ponteiro` para a próxima.
 
-4. Você continua fazendo isso até que uma pista lhe diga: "Acabou. Não há mais pistas." (um ponteiro NULL).
+4. Você continua fazendo isso até que uma pista lhe diga: "Acabou. Não há mais pistas." (um ponteiro `NULL`).
 
 É exatamente assim que uma lista encadeada funciona. Ela não armazena dados em blocos de memória contínuos como um array. Em vez disso, ela armazena cada elemento em um local separado da memória, e cada elemento "aponta" para o próximo.
 
@@ -20,11 +20,11 @@ Imagine uma "caça ao tesouro".
 
 ## 2. O Bloco de Construção em C: O "Nó" (Node)
 
-Em C, o "vagão" do nosso trem é uma struct. Chamamos esse bloco de **"Nó"** (Node).
+Em C, o "vagão" do nosso trem é uma `struct`. Chamamos esse bloco de **"Nó"** (Node).
 
 Cada nó precisa de duas coisas:
 
-1. Os dados que queremos armazenar (ex: um int).
+1. Os dados que queremos armazenar (ex: um `int`).
 
 2. Um ponteiro para o próximo nó da lista.
 
@@ -48,16 +48,16 @@ typedef struct no {
 
 ## 3. A "Cabeça" (Head) e a Alocação Dinâmica
 
-Uma lista encadeada é definida pelo seu ponto de entrada: um único ponteiro para o primeiro nó. Chamamos isso de "cabeça" (ou head, inicio, lista, etc.).
+Uma lista encadeada é definida pelo seu ponto de entrada: um único ponteiro para o primeiro nó. Chamamos isso de "cabeça" (ou `head`, `inicio`, `lista`, etc.).
 
-Quando a lista está vazia, esse ponteiro simplesmente aponta para NULL.
+Quando a lista está vazia, esse ponteiro simplesmente aponta para `NULL`.
 
 ``` c
 // No seu programa principal (main), você começa com uma lista vazia:
 No *lista = NULL;
 ```
 
-**Importante:** Nós não são criados "automaticamente". Como eles não estão em um bloco contínuo (como um array), precisamos alocar memória para cada novo nó que criamos. Para isso, usamos malloc (da biblioteca <stdlib.h>).
+**Importante:** Nós não são criados "automaticamente". Como eles não estão em um bloco contínuo (como um array), precisamos alocar memória para cada novo nó que criamos. Para isso, usamos `malloc` (da biblioteca `<stdlib.h>`).
 
 Aqui está uma função de "fábrica" que cria um novo nó:
 
@@ -94,7 +94,7 @@ Esta é a operação de inserção mais simples e rápida. É como adicionar um 
 
 1. Crie um novo nó.
 
-2. Faça o ponteiro proximo do novo nó apontar para a "cabeça" atual da lista.
+2. Faça o ponteiro `proximo` do novo nó apontar para a "cabeça" atual da lista.
 
 3. Atualize a "cabeça" da lista para que ela seja o seu novo nó.
 
@@ -124,7 +124,7 @@ No* inserirNoInicio(No *lista, int valor) {
 
 ### B. Percorrer e Imprimir a Lista
 
-Para ver todos os valores, você começa na "cabeça" e segue os ponteiros proximo até encontrar NULL.
+Para ver todos os valores, você começa na "cabeça" e segue os ponteiros `proximo` até encontrar `NULL`.
 
 ``` c
 #include <stdio.h> // Para printf
@@ -151,7 +151,7 @@ void imprimirLista(No *lista) {
 
 ### C. Liberar a Memória (Muito Importante!)
 
-Como alocamos memória com malloc, precisamos liberá-la com free quando a lista não for mais necessária, para evitar vazamentos de memória (memory leaks).
+Como alocamos memória com `malloc`, precisamos liberá-la com `free` quando a lista não for mais necessária, para evitar vazamentos de memória (memory leaks).
 
 Você precisa liberar cada nó, um por um.
 
@@ -176,7 +176,7 @@ void liberarLista(No *lista) {
 
 ## 5. Exemplo Completo (Juntando Tudo)
 
-Vamos criar um programa main que usa todas essas funções.
+Vamos criar um programa `main` que usa todas essas funções.
 
 ``` c
 #include <stdio.h>
@@ -273,6 +273,6 @@ Os ponteiros são o "cimento" que liga os blocos de memória (os nós) que estã
 
 ### Desvantagens (Contras)
 
-- Sem Acesso Aleatório: Você não pode pular direto para o elemento 5 (lista[5]). Você deve percorrer os elementos 0, 1, 2, 3 e 4 para chegar lá.
+- Sem Acesso Aleatório: Você não pode pular direto para o elemento 5 (`lista[5]`). Você deve percorrer os elementos 0, 1, 2, 3 e 4 para chegar lá.
 
-- Uso de Memória: Cada elemento gasta um pouco mais de memória, pois precisa armazenar o valor + o ponteiro para o próximo.
+- Uso de Memória: Cada elemento gasta um pouco mais de memória, pois precisa armazenar o `valor` + o `ponteiro` para o próximo.
