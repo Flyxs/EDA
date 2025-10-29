@@ -82,6 +82,7 @@ void destroi_lista(celula *le) {
     free(le);
 }
 
+// Imprime a lista
 void imprimir_lista(celula *le) {
     if (le == NULL) {
         printf("A lista ainda não foi criada\n");
@@ -96,6 +97,7 @@ void imprimir_lista(celula *le) {
     printf(" NULL ]");
 }
 
+// Limpa o terminal
 void limpar_terminal() {
     #ifdef _WIN32
         // Se for Windows
