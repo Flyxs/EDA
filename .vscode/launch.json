@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/felype/Documentos/EDA/Algoritimos-de-busca/busca-binaria",
-      "program": "/home/felype/Documentos/EDA/Algoritimos-de-busca/busca-binaria/build/Debug/outDebug",
+      "cwd": "/home/felype/Documentos/EDA/Listas/Lista-3-Busca-e-ordenação",
+      "program": "/home/felype/Documentos/EDA/Listas/Lista-3-Busca-e-ordenação/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
