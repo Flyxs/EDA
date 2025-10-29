@@ -22,6 +22,16 @@
 
 - Estável: Não.
 
+        | 3 | 5 | 9 | 1 | 6 |  // 1 é o menor. Troca com o i
+          i
+        | 1 | 5 | 9 | 3 | 6 |  // 3 é o menor. Troca com o i
+              i
+        | 1 | 3 | 9 | 5 | 6 |  // 5 é o menor. Troca com o i
+                  i
+        | 1 | 3 | 5 | 9 | 6 |  // 6 é o menor. Troca com o i
+                      i
+        | 1 | 3 | 5 | 6 | 9 |  // vetor ordenado!
+
 [**Exemplo no arquivo de código**](/Algoritimos-de-ordenação/selection-sort/selection_sort.c)
 
 **[VOLTAR](/Algoritimos-de-ordenação/Algoritimos_de_ordenacao.md)**

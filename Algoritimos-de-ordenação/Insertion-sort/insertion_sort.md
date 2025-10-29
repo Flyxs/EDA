@@ -22,6 +22,13 @@ Também é simples e funciona construindo a lista ordenada "um item por vez".
 
 - Estável: Sim.
 
+        | 3 | 1 | 2 | 7 | 0 |  // Vetor não ordenado
+        | 3 | - | - | - | - |  // Compara o segundo com o primeiro
+        | 1 | 3 | - | - | - |  // Compara o terceiro com os anteriores
+        | 1 | 2 | 3 | - | - |  // Compara o quarto com os anteriores
+        | 1 | 2 | 3 | 7 | - |  // Compara o quinto com os anteriores
+        | 0 | 1 | 2 | 3 | 7 |  // Vetor ordenado
+
 [**Exemplo no arquivo de código**](/Algoritimos-de-ordenação/Insertion-sort/insertion_sort.c)
 
 **[VOLTAR](/Algoritimos-de-ordenação/Algoritimos_de_ordenacao.md)**

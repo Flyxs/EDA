@@ -26,6 +26,61 @@ O algoritmo "padrão-ouro" da ordenação. Também usa "Dividir e Conquistar" e 
 
 - **Estável:** Não.
 
+         j k                       p
+        | 2 | 1 | 7 | 4 | 6 | 3 | 5 |
+
+             j k                  p
+        | 2 | 1 | 7 | 4 | 6 | 3 | 5 |
+
+                 j k              p
+        | 2 | 1 | 7 | 4 | 6 | 3 | 5 |
+
+                  j   k           p
+        | 2 | 1 | 7 | 4 | 6 | 3 | 5 |
+
+                      j   k       p
+        | 2 | 1 | 4 | 7 | 6 | 3 | 5 |
+
+                      j       k   p
+        | 2 | 1 | 4 | 7 | 6 | 3 | 5 |
+
+                          j      k p
+        | 2 | 1 | 4 | 3 | 6 | 7 | 5 |
+
+                          j       p
+        | 2 | 1 | 4 | 3 | 5 | 7 | 6 |
+
+---
+
+         j k          p          p         j k  p
+        | 2 | 1 | 4 | 3 |      | 5 |      | 7 | 6 |
+
+             j k      p          p          j  k p
+        | 2 | 1 | 4 | 3 |      | 5 |      | 7 | 6 |
+
+                 j k  p          p             p
+        | 2 | 1 | 4 | 3 |      | 5 |      | 6 | 7 |
+
+                  j  k p         p              p
+        | 2 | 1 | 4 | 3 |      | 5 |      | 6 | 7 |
+
+                      p          p             p
+        | 2 | 1 | 3 | 4 |      | 5 |      | 6 | 7 |
+
+---
+
+         j k  p               p          p              p
+        | 2 | 1 |       | 3 | 4 |      | 5 |      | 6 | 7 |
+
+          j  k p              p          p              p
+        | 2 | 1 |       | 3 | 4 |      | 5 |      | 6 | 7 |
+
+              p               p          p              p
+        | 1 | 2 |       | 3 | 4 |      | 5 |      | 6 | 7 |
+---
+
+        | 1 | 2 | 3 | 4 | 5 | 6 | 7 |  // vetor ordenado
+
 [**Exemplo no arquivo de código**](/Algoritimos-de-ordenação/Quick-sort/quick_sort.c)
 
 **[VOLTAR](/Algoritimos-de-ordenação/Algoritimos_de_ordenacao.md)**
